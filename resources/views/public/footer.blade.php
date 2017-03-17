@@ -24,6 +24,21 @@
             <input type="text" placeholder="Ваше имя" id="name" name="name" value="">
             <input type="submit" class="send_btn" value="Отправить">
         </form>
+        @if( $show_popup )
+        <form id="feedback_sent" class="white-popup-block vn-form" name="feedback_sent">
+            <div class="vn-form-header">Спасибо, Ваша заявка принята, мы перезвоним в ближайшее время</div>
+        </form>
+        <script>
+        $(document).ready(function() {
+            $.magnificPopup.open({
+                items: {
+                src: '#feedback_sent'
+                },
+                type: 'inline'
+            });
+        });
+        </script>
+        @endif
         <script src="/vendor/magnific_popup/jquery.magnific-popup.min.js"></script>
         <script src="/vendor/validate/validate.min.js"></script>
         <script src="/js/scripts.js"></script>

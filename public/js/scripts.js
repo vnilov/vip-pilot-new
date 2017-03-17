@@ -6,6 +6,7 @@ $('.vn-image-popup').magnificPopup({
     // other options
 });
 
+
 $(document).ready(function() {
     $('.popup-with-form').magnificPopup({
         type: 'inline',

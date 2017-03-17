@@ -19,20 +19,8 @@ Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middle
 
 Route::post('mail', function(\Illuminate\Http\Request $request) {
     if ($request->has("phone")) {
-/*        $phone = htmlspecialchars(strip_tags($request->input("phone")));
-        $name = htmlspecialchars(strip_tags($request->input("name")));
-        $time = htmlspecialchars(strip_tags($request->input("time")));
-
-        $to = 'nilov.vadim@gmail.com';
-        $subject = 'Новое сообщение отправленное с сайта';
-        $message = 'Номер телефона: ' . $phone . "<br>Удобное время: " . $time . "<br>Время: " . $name;
-        $headers = 'MIME-Version: 1.0' . "\r\n";
-        $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-        $headers .= 'From: info@vip-pilot.ru' . "\r\n";
-
-        mail($to, $subject, $message, $headers);*/
         \Illuminate\Support\Facades\Mail::to('nilov.vadim@gmail.com')->send(new \App\Mail\Order($request));
-        
+        $request->session()->flash('mail_status', '1');
     }
     return redirect('/');
 });
