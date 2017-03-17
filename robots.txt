@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /secure_area/
+Disallow: /images/
+
+User-agent: Yandex
+Disallow: /secure_area/
+Disallow: /images/
+
+host: vip-pilot.ru
