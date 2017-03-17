@@ -46,9 +46,21 @@
         <div class="col-md-4">
             <div class="small-box bg-red">
                 <div class="inner">
-                    <h3>0</h3>
-                    <?php // dd(\App\Repositories\Metrica::i()->getTodayVisitors()) ?>
+                    <?php $t = (\App\Utilities\Metrica::i()->getTodayVisitors()); ?>
+		    <h3>{{ $t[0][0] }}</h3>
                     <p>Посетителей за сегодня</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                </div>
+            </div>
+        </div>
+	<div class="col-md-4">
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <?php $t = (\App\Utilities\Metrica::i()->getTodayViews()); ?>
+		    <h3>{{ $t[0][0] }}</h3>
+                    <p>Просмотров страниц за сегодня</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-pie-graph"></i>

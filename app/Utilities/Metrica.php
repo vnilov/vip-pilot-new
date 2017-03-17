@@ -35,12 +35,25 @@ class Metrica
         $statClient = new StatClient($this->token);
         $paramsModel = new \Yandex\Metrica\Stat\Models\ByTimeParams();
         $paramsModel
+	    ->setMetrics(\Yandex\Metrica\Stat\MetricConst::S_USERS)
+            ->setId($this->counter_id)
+            ->setDate1('today')
+            ->setDate2('today')
+            ->setGroup('day');
+        $data = $statClient->data()->getByTime($paramsModel)->getTotals();
+        return $data;
+    }    
+    function getTodayViews()
+    {
+        $statClient = new StatClient($this->token);
+        $paramsModel = new \Yandex\Metrica\Stat\Models\ByTimeParams();
+        $paramsModel
             ->setMetrics(\Yandex\Metrica\Stat\MetricConst::S_HITS)
             ->setId($this->counter_id)
             ->setDate1('today')
             ->setDate2('today')
             ->setGroup('day');
-        $data = $statClient->data()->getByTime($paramsModel);
+        $data = $statClient->data()->getByTime($paramsModel)->getTotals();
         return $data;
     }
     
