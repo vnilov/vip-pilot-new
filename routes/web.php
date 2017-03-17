@@ -19,7 +19,7 @@ Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middle
 
 Route::post('mail', function(\Illuminate\Http\Request $request) {
     if ($request->has("phone")) {
-        \Illuminate\Support\Facades\Mail::to('nilov.vadim@gmail.com')->send(new \App\Mail\Order($request));
+        \Illuminate\Support\Facades\Mail::to('info@vip-pilot.ru')->send(new \App\Mail\Order($request));
         $request->session()->flash('mail_status', '1');
     }
     return redirect('/');
