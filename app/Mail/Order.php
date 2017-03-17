@@ -2,7 +2,7 @@
 
 namespace App\Mail;
 
-use Composer\DependencyResolver\Request;
+use \Illuminate\Http\Request;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
