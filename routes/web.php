@@ -14,6 +14,7 @@
 Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middleware' => ['web', 'auth'], 'namespace' => 'Admin'], function () {
     // Backpack\MenuCRUD
     CRUD::resource('menu-item', 'MenuItemCrudController');
+    CRUD::resource('counters', 'CounterController');
 });
 
 Route::post('mail', function(\Illuminate\Http\Request $request) {

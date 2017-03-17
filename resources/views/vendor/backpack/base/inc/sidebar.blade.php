@@ -22,6 +22,7 @@
           <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('backpack::base.dashboard') }}</span></a></li>
           <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/menu-item') }}"><i class="fa fa-list"></i> <span>Меню</span></a></li>
           <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/page') }}"><i class="fa fa-file-o"></i> <span>Страницы</span></a></li>
+          <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/counters') }}"><i class="fa fa-bar-chart"></i> <span>Счетчики</span></a></li>
 
 
           <!-- ======================================= -->

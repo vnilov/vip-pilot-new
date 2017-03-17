@@ -6,7 +6,7 @@
  * Date: 3/17/17
  * Time: 11:54 AM
  */
-namespace App\Repositories;
+namespace App\Utilities;
 
 use \Yandex\Metrica\Stat\StatClient;
 

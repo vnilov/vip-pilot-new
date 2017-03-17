@@ -9,6 +9,7 @@
 namespace App\Http\Controllers\Pub;
 
 use App\Http\Controllers\Controller;
+use App\Models\Counter;
 use App\Models\MenuItem as Menu;
 use App\Models\Page;
 
@@ -19,12 +20,15 @@ class MainController extends Controller
         // получаем данные по дереву из пунктов меню
         $menu = Menu::getTree();
         $path = strpos($path, '/') === 0 ? substr($path,1) : $path;
-        $current_page = Page::where('slug', '/' . $path)->first();
-        
         // получаем данные по странице, если есть
+        $current_page = Page::where('slug', '/' . $path)->first();
+        // получаем счетчики
+        $counters = Counter::all();
+        
         return view('public.index', [
             'menu' => $menu,
-            'page' => $current_page
+            'page' => $current_page,
+            'counters' => $counters
         ]);
     }
 }
