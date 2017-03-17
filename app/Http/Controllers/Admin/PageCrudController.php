@@ -64,7 +64,7 @@ class PageCrudController extends CrudController
     // -----------------------------------------------
 
     // Overwrites the CrudController create() method to add template usage.
-    public function create($template = "default")
+    public function create($template = "mdefault")
     {
         $this->addDefaultPageFields($template);
         $this->useTemplate($template);
@@ -157,7 +157,7 @@ class PageCrudController extends CrudController
      *
      * @param  string $template_name The name of the template that should be used in the current form.
      */
-    public function useTemplate($template_name = "default")
+    public function useTemplate($template_name = "mdefault")
     {
         $templates = $this->getTemplates();
         
