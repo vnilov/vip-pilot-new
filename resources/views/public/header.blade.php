@@ -6,6 +6,7 @@
         <link href="/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
         <link rel="stylesheet" href="/css/styles.css" type="text/css" />
         <link rel="stylesheet" href="/vendor/magnific_popup/magnific-popup.css" type="text/css" />
+        <meta name="yandex-verification" content="5bb39b492aa12271" />
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="{{ isset(json_decode($page->extras)->meta_description) ? json_decode($page->extras)->meta_description : "" }}" />
         <meta name="keywords" content="{{ isset(json_decode($page->extras)->meta_keywords) ? json_decode($page->extras)->meta_keywords : ""}}" />
